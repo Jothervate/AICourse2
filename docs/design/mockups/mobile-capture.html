@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=390, initial-scale=1">
+  <title>Mobile Capture</title>
+  <style>
+    html,
+    body {
+      width: 390px;
+      height: 1200px;
+      margin: 0;
+      overflow: hidden;
+      background: #faf7f2;
+    }
+
+    iframe {
+      display: block;
+      width: 390px;
+      height: 1200px;
+      border: 0;
+    }
+  </style>
+</head>
+<body>
+  <iframe id="frame" title="390px mobile mockup"></iframe>
+  <script>
+    const params = new URLSearchParams(location.search);
+    const page = params.get("page") || "product-list";
+    document.getElementById("frame").src = `./${page}.html`;
+  </script>
+</body>
+</html>

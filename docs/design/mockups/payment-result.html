@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>花漾生活 - 付款結果設計稿</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./mockup.css">
+</head>
+<body>
+  <main class="page">
+    <div class="shell">
+      <nav class="nav">
+        <div class="brand"><span class="brand-mark">花</span>花漾生活</div>
+        <div class="nav-links"><span>花禮選品</span><span>購物車</span><span>我的訂單</span></div>
+      </nav>
+
+      <section class="result-card">
+        <div>
+          <p class="eyebrow">Payment Result</p>
+          <span class="badge">付款成功</span>
+          <h1 style="margin-top:16px">你的花禮訂單已完成付款。</h1>
+          <p class="lead">我們會開始整理花材與包裝，並依照訂單資訊安排後續出貨。此頁僅呈現結果，不改動綠界回傳與付款狀態判斷。</p>
+
+          <div class="status-grid" style="margin-top:22px">
+            <div class="data-row"><span>訂單編號</span><strong>FL202606070028</strong></div>
+            <div class="data-row"><span>付款金額</span><strong>NT$ 3,360</strong></div>
+            <div class="data-row"><span>付款方式</span><strong>Credit</strong></div>
+            <div class="data-row"><span>綠界交易編號</span><strong>250607000128</strong></div>
+          </div>
+
+          <div class="next-steps">
+            <strong style="color:var(--ink)">下一步</strong>
+            <span>1. 檢查訂單詳情與收件資訊。</span>
+            <span>2. 回到商品列表繼續挑選花禮。</span>
+          </div>
+
+          <div class="actions">
+            <a class="btn btn-primary" href="#">查看訂單</a>
+            <a class="btn btn-secondary" href="#">回到商店</a>
+          </div>
+        </div>
+        <aside class="result-mascot" aria-label="花禮導覽小助手慶祝付款完成">
+          <img src="../assets/mascot-guide.png" alt="花漾生活 Q 版花禮導覽小助手">
+          <p class="muted" style="margin-top:12px;text-align:center;line-height:1.7">謝謝你的心意，花禮正在準備中。</p>
+        </aside>
+      </section>
+
+      <section class="result-card" style="margin-top:22px">
+        <div>
+          <p class="eyebrow">Failed State Reference</p>
+          <span class="badge badge-pending">付款未完成</span>
+          <h2 style="margin-top:14px">付款尚未完成，請確認後再試一次。</h2>
+          <p class="muted" style="margin-top:12px;line-height:1.8">失敗狀態保留重新付款與查看訂單入口，文案保持冷靜可信任，不讓插圖蓋過錯誤資訊。</p>
+          <div class="actions">
+            <a class="btn btn-success" href="#">重新付款</a>
+            <a class="btn btn-secondary" href="#">查看訂單</a>
+          </div>
+        </div>
+        <aside class="result-mascot">
+          <img src="../assets/mascot-guide.png" alt="花漾生活 Q 版花禮導覽小助手">
+        </aside>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<%
+  const hasOrder = !!order;
+  const normalizedStatus = hasOrder ? String(order.status || '').toLowerCase() : '';
+  const isSuccess = normalizedStatus === 'paid';
+  const isPending = normalizedStatus === 'pending' || normalizedStatus === 'unpaid';
+  const isFailed = !hasOrder || normalizedStatus === 'failed' || normalizedStatus === 'canceled' || normalizedStatus === 'cancelled' || normalizedStatus === 'cancel';
+  const badgeText = isSuccess ? '付款成功' : (isPending ? '付款待確認' : '付款未完成');
+  const headline = isSuccess
+    ? '你的花禮訂單已完成付款。'
+    : (isPending ? '付款狀態尚待確認。' : '付款尚未完成，請確認後再試一次。');
+  const helperText = isSuccess
+    ? '我們會開始整理花材與包裝，並依照訂單資訊安排後續出貨。此頁僅呈現結果，不改動綠界回傳與付款狀態判斷。'
+    : '請確認付款狀態或回到訂單詳情查看下一步。';
+%>
+
+<div class="floral-page floral-payment-page">
+  <section class="floral-result-card">
+    <div>
+      <p class="floral-eyebrow">Payment Result</p>
+      <span class="floral-status-badge <%= isSuccess ? 'floral-status-badge--paid' : (isPending ? 'floral-status-badge--pending' : 'floral-status-badge--failed') %>">
+        <%= badgeText %>
+      </span>
+      <h1><%= headline %></h1>
+      <p class="floral-lead"><%= helperText %></p>
+
+      <% if (message) { %>
+        <p class="floral-muted floral-result-message"><%= message %></p>
+      <% } %>
+
+      <% if (order) { %>
+        <dl class="floral-result-data">
+          <div>
+            <dt>訂單編號</dt>
+            <dd><%= order.order_no %></dd>
+          </div>
+          <div>
+            <dt>付款金額</dt>
+            <dd>NT$ <%= Number(order.total_amount).toLocaleString() %></dd>
+          </div>
+          <div>
+            <dt>付款方式</dt>
+            <dd><%= order.payment_method || 'Credit' %></dd>
+          </div>
+          <div>
+            <dt>綠界交易編號</dt>
+            <dd><%= order.ecpay_trade_no || '-' %></dd>
+          </div>
+          <div>
+            <dt>付款狀態</dt>
+            <dd><%= order.status %></dd>
+          </div>
+          <div>
+            <dt>綠界結果</dt>
+            <dd>
+              <%= order.ecpay_rtn_code || '-' %>
+              <% if (order.ecpay_rtn_msg) { %>
+                / <%= order.ecpay_rtn_msg %>
+              <% } %>
+            </dd>
+          </div>
+        </dl>
+
+        <div class="floral-next-steps">
+          <strong>下一步</strong>
+          <span>1. 檢查訂單詳情與收件資訊。</span>
+          <span>2. 回到商品列表繼續挑選花禮。</span>
+        </div>
+
+        <div class="floral-actions">
+          <% if (isPending && order.merchant_trade_no) { %>
+            <a class="floral-btn floral-btn--success" href="/payment/redirect/<%= order.merchant_trade_no %>">重新付款</a>
+          <% } %>
+          <a class="floral-btn floral-btn--primary" href="/orders/<%= order.id %>">查看訂單</a>
+          <a class="floral-btn floral-btn--secondary" href="/">回到商店</a>
+        </div>
+      <% } else { %>
+        <div class="floral-actions">
+          <a class="floral-btn floral-btn--secondary" href="/">回到商店</a>
+        </div>
+      <% } %>
+    </div>
+
+    <aside class="floral-result-mascot">
+      <img src="/images/mascot-guide.png" alt="花漾生活花禮導覽小助手">
+      <p><%= isSuccess ? '謝謝你的心意，花禮正在準備中。' : '我們會陪你確認下一步。' %></p>
+    </aside>
+  </section>
+</div>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+</head>
+<body>
+  <p>Redirecting to ECPay staging checkout...</p>
+  <form id="ecpay-form" method="post" action="<%= checkoutUrl %>">
+    <% Object.keys(params).forEach(function (key) { %>
+      <input type="hidden" name="<%= key %>" value="<%= params[key] %>">
+    <% }) %>
+    <noscript>
+      <button type="submit">Continue to ECPay</button>
+    </noscript>
+  </form>
+  <script>
+    document.getElementById('ecpay-form').submit();
+  </script>
+</body>
+</html>

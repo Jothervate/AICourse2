@@ -1,0 +1,39 @@
+- generic [ref=e1]:
+  - generic [ref=e3]:
+    - link "綠界科技 ECPay" [ref=e5] [cursor=pointer]:
+      - /url: https://www.ecpay.com.tw
+      - img "綠界科技 ECPay" [ref=e6]
+    - img [ref=e8]
+  - generic [ref=e12]:
+    - heading "交易驗證碼確認" [level=3] [ref=e13]
+    - generic [ref=e14]:
+      - generic [ref=e15]:
+        - paragraph [ref=e16]: 特約商店：測試帳號三
+        - paragraph [ref=e17]: 交易金額：1,680 TWD
+        - text: 信用卡號：431195*******2222
+        - paragraph [ref=e18]: 交易日期：2026/6/8 下午 09:26:08
+        - paragraph [ref=e30]: (OTP密碼：1234)
+      - textbox "請輸入網路刷卡OTP服務密碼 (Please enter the password)" [active] [ref=e33]: "1234"
+      - link "送出(Submit)" [ref=e35] [cursor=pointer]:
+        - /url: "#"
+      - link "取消(Cancel)" [ref=e22] [cursor=pointer]:
+        - /url: "#"
+      - generic [ref=e36]:
+        - paragraph [ref=e37]: 沒有收到簡訊OTP服務密碼？
+        - paragraph [ref=e38]:
+          - link "重新取得OTP服務密碼(Get the password again)" [ref=e39] [cursor=pointer]:
+            - /url: "#"
+        - list [ref=e40]:
+          - listitem [ref=e41]:
+            - paragraph [ref=e42]: • 交易驗證碼有效時間為5分鐘
+          - listitem [ref=e43]:
+            - paragraph [ref=e44]: • 請輸入您接收到的網路刷卡簡訊OTP服務密碼
+    - generic [ref=e24]:
+      - heading "注意事項" [level=4] [ref=e25]
+      - list [ref=e26]:
+        - listitem [ref=e27]: 此為綠界科技模擬 發卡行網路刷卡3D驗證服務，請依各銀行交易授權實際畫面為主。
+  - contentinfo [ref=e28]:
+    - generic [ref=e29]:
+      - generic:
+        - link:
+          - /url: https://www.instantssl.com/ssl-certificate.html

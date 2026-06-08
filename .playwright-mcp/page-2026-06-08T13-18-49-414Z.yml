@@ -1,0 +1,35 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "花 花漾生活" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e5]: 花
+        - generic [ref=e6]: 花漾生活
+      - navigation [ref=e7]:
+        - link "花禮選品" [ref=e8] [cursor=pointer]:
+          - /url: /
+        - link "購物車" [ref=e9] [cursor=pointer]:
+          - /url: /cart
+        - link "我的訂單" [ref=e10] [cursor=pointer]:
+          - /url: /orders
+      - generic [ref=e11]:
+        - generic [ref=e12]: Codex 測試員
+        - button "登出" [ref=e13]
+  - main [ref=e14]:
+    - generic [ref=e15]:
+      - generic [ref=e16]:
+        - paragraph [ref=e17]: Gift Checkout
+        - heading "確認購物車" [level=1] [ref=e18]
+        - paragraph [ref=e19]: 在送出訂單前，確認花禮數量、包裝與運費。付款流程維持既有綠界金流串接。
+      - generic [ref=e20]:
+        - complementary [ref=e21]:
+          - img "花漾生活花禮導覽小助手" [ref=e22]
+          - paragraph [ref=e23]:
+            - strong [ref=e24]: 先挑一份心意吧
+            - generic [ref=e25]: 購物車目前是空的，可以從場合與花色開始瀏覽。
+        - link "回商品列表" [ref=e26] [cursor=pointer]:
+          - /url: /
+  - contentinfo [ref=e27]:
+    - generic [ref=e28]:
+      - generic [ref=e29]: © 2026 花漾生活 Flower Life
+      - generic [ref=e30]: Premium floral gift shop

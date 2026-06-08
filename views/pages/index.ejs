@@ -1,0 +1,133 @@
+<div id="app" class="floral-page">
+  <section class="floral-hero">
+    <div class="floral-hero__copy">
+      <p class="floral-eyebrow">Premium Floral Gift</p>
+      <h1>把每一次送禮，都整理成清雅的花漾儀式。</h1>
+      <p class="floral-lead">
+        精選花束、永生花與季節花禮，以精品花店的細緻包裝和安定的結帳流程，陪你完成重要心意。
+      </p>
+      <div class="floral-actions">
+        <a href="#products" class="floral-btn floral-btn--primary">瀏覽花禮</a>
+        <a href="#featured" class="floral-btn floral-btn--secondary">本週推薦</a>
+      </div>
+    </div>
+
+    <div class="floral-hero__media" aria-label="花禮情境照片">
+      <img
+        src="https://images.unsplash.com/photo-1518709779341-56cf4535e94b?w=760&auto=format&fit=crop"
+        alt="玫瑰花束"
+      >
+      <img
+        src="https://images.unsplash.com/photo-1508610048659-a06b669e3321?w=520&auto=format&fit=crop"
+        alt="柔色花禮"
+      >
+    </div>
+
+    <aside class="floral-mascot-card floral-hero__mascot">
+      <img src="/images/mascot-guide.png" alt="花漾生活花禮導覽小助手">
+      <p>
+        <strong>小花禮導覽</strong>
+        <span>挑選時可以先看場合標籤與花色，加入購物車後再確認收件資訊。</span>
+      </p>
+    </aside>
+  </section>
+
+  <section id="featured" class="floral-section">
+    <div class="floral-section-head">
+      <div>
+        <h2>本週精選</h2>
+        <p>適合生日、祝賀與謝意的柔色花禮。</p>
+      </div>
+      <p>庫存與價格以正式商品資料為準。</p>
+    </div>
+
+    <div v-if="loading" class="floral-loading">
+      <div class="floral-spinner"></div>
+    </div>
+
+    <div v-else-if="products.length > 0" class="floral-product-grid floral-product-grid--featured">
+      <article
+        v-for="(product, idx) in products.slice(0, 4)"
+        :key="product.id"
+        class="floral-product-card"
+        @click="goToProduct(product.id)"
+      >
+        <img :src="product.image_url || featuredImages[idx % 4]" :alt="product.name">
+        <div class="floral-product-card__body">
+          <h3>{{ product.name }}</h3>
+          <p>{{ product.description || '精緻包裝 / 可作為日常與節慶花禮' }}</p>
+          <strong>NT$ {{ product.price.toLocaleString() }}</strong>
+          <button
+            @click.stop="addToCart(product)"
+            :disabled="product._adding || product.stock <= 0"
+            class="floral-btn floral-btn--primary"
+          >
+            {{ product.stock <= 0 ? '暫無庫存' : '加入購物車' }}
+          </button>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="products" class="floral-section">
+    <div class="floral-section-head">
+      <div>
+        <h2>全部花禮</h2>
+        <p>從場合、花色與預算開始，挑一份剛好的心意。</p>
+      </div>
+    </div>
+
+    <div v-if="loading" class="floral-loading">
+      <div class="floral-spinner"></div>
+    </div>
+
+    <template v-else>
+      <div v-if="products.length === 0" class="floral-empty">
+        <aside class="floral-mascot-card">
+          <img src="/images/mascot-guide.png" alt="花漾生活花禮導覽小助手">
+          <p>
+            <strong>目前尚無花禮</strong>
+            <span>請稍後再回來看看新的花禮選品。</span>
+          </p>
+        </aside>
+      </div>
+
+      <div v-else class="floral-product-grid">
+        <article
+          v-for="(product, idx) in products"
+          :key="product.id"
+          class="floral-product-card"
+          @click="goToProduct(product.id)"
+        >
+          <img
+            :src="product.image_url || featuredImages[idx % featuredImages.length]"
+            :alt="product.name"
+          >
+          <div class="floral-product-card__body">
+            <h3>{{ product.name }}</h3>
+            <p>{{ product.description || '精品花禮 / 柔色花材 / 禮品包裝' }}</p>
+            <strong>NT$ {{ product.price.toLocaleString() }}</strong>
+            <button
+              @click.stop="addToCart(product)"
+              :disabled="product._adding || product.stock <= 0"
+              class="floral-btn floral-btn--primary"
+            >
+              {{ product.stock <= 0 ? '暫無庫存' : '加入購物車' }}
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <div v-if="pagination.totalPages > 1" class="floral-pagination">
+        <button
+          v-for="p in pagination.totalPages"
+          :key="p"
+          @click="loadProducts(p)"
+          :class="{ 'is-active': p === pagination.page }"
+        >
+          {{ p }}
+        </button>
+      </div>
+    </template>
+  </section>
+</div>

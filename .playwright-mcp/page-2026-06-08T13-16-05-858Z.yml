@@ -1,0 +1,137 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "花 花漾生活" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e5]: 花
+        - generic [ref=e6]: 花漾生活
+      - navigation [ref=e7]:
+        - link "花禮選品" [ref=e8] [cursor=pointer]:
+          - /url: /
+        - link "購物車 1" [ref=e131] [cursor=pointer]:
+          - /url: /cart
+          - text: 購物車
+          - generic [ref=e132]: "1"
+      - link "登入" [ref=e11] [cursor=pointer]:
+        - /url: /login
+  - main [ref=e12]:
+    - generic [ref=e13]:
+      - generic [ref=e14]:
+        - generic [ref=e15]:
+          - paragraph [ref=e16]: Premium Floral Gift
+          - heading "把每一次送禮，都整理成清雅的花漾儀式。" [level=1] [ref=e17]
+          - paragraph [ref=e18]: 精選花束、永生花與季節花禮，以精品花店的細緻包裝和安定的結帳流程，陪你完成重要心意。
+          - generic [ref=e19]:
+            - link "瀏覽花禮" [ref=e20] [cursor=pointer]:
+              - /url: "#products"
+            - link "本週推薦" [ref=e21] [cursor=pointer]:
+              - /url: "#featured"
+        - generic "花禮情境照片" [ref=e22]:
+          - img "玫瑰花束" [ref=e23]
+          - img "柔色花禮" [ref=e24]
+        - complementary [ref=e25]:
+          - img "花漾生活花禮導覽小助手" [ref=e26]
+          - paragraph [ref=e27]:
+            - strong [ref=e28]: 小花禮導覽
+            - generic [ref=e29]: 挑選時可以先看場合標籤與花色，加入購物車後再確認收件資訊。
+      - generic [ref=e30]:
+        - generic [ref=e31]:
+          - generic [ref=e32]:
+            - heading "本週精選" [level=2] [ref=e33]
+            - paragraph [ref=e34]: 適合生日、祝賀與謝意的柔色花禮。
+          - paragraph [ref=e35]: 庫存與價格以正式商品資料為準。
+        - generic [ref=e36]:
+          - article [ref=e37] [cursor=pointer]:
+            - img "粉色玫瑰花束" [ref=e38]
+            - generic [ref=e39]:
+              - heading "粉色玫瑰花束" [level=3] [ref=e40]
+              - paragraph [ref=e41]: 精選 20 朵頂級粉色玫瑰，搭配滿天星與尤加利葉，由專業花藝師手工包紮。柔美的粉色花瓣層層綻放，散發淡雅清香，適合生日、紀念日或任何想要表達心意的場合。每束花皆附贈保鮮指南小卡與精美緞帶包裝，讓美麗延續更久。
+              - strong [ref=e42]: NT$ 1,680
+              - button "加入購物車" [ref=e43]
+          - article [ref=e44] [cursor=pointer]:
+            - img "白色百合花禮盒" [ref=e45]
+            - generic [ref=e46]:
+              - heading "白色百合花禮盒" [level=3] [ref=e47]
+              - paragraph [ref=e48]: 嚴選 6 枝純白香水百合，花朵碩大飽滿，綻放時散發優雅迷人的清甜香氣。搭配翠綠葉材，置於典雅燙金禮盒中，無需額外包裝即可直接送禮。適合開幕誌慶、喬遷祝賀、長輩生日等正式場合，傳遞最體面的祝福心意。
+              - strong [ref=e49]: NT$ 1,280
+              - button "加入購物車" [ref=e50]
+          - article [ref=e51] [cursor=pointer]:
+            - img "繽紛向日葵花束" [ref=e52]
+            - generic [ref=e53]:
+              - heading "繽紛向日葵花束" [level=3] [ref=e54]
+              - paragraph [ref=e55]: 陽光般燦爛的向日葵 10 朵，搭配橙色雛菊、黃金球與新鮮綠葉，組成充滿活力的繽紛花束。向日葵象徵樂觀與希望，適合畢業祝賀、探病慰問或為朋友加油打氣。花束以牛皮紙與麻繩包裝，呈現自然清新的田園風格。
+              - strong [ref=e56]: NT$ 980
+              - button "加入購物車" [ref=e57]
+          - article [ref=e58] [cursor=pointer]:
+            - img "紫色鬱金香盆栽" [ref=e59]
+            - generic [ref=e60]:
+              - heading "紫色鬱金香盆栽" [level=3] [ref=e61]
+              - paragraph [ref=e62]: 荷蘭進口紫色鬱金香球根盆栽，含手工陶瓷花盆，整體高度約 25-30cm。鬱金香花期約 2-3 週，花朵會隨光線開合，姿態優雅迷人。放置於明亮通風處，每 2-3 天澆水一次即可。適合擺放在書桌、窗台或玄關，為空間增添一抹春日浪漫。
+              - strong [ref=e63]: NT$ 750
+              - button "加入購物車" [ref=e64]
+      - generic [ref=e65]:
+        - generic [ref=e67]:
+          - heading "全部花禮" [level=2] [ref=e68]
+          - paragraph [ref=e69]: 從場合、花色與預算開始，挑一份剛好的心意。
+        - generic [ref=e70]:
+          - article [ref=e71] [cursor=pointer]:
+            - img "粉色玫瑰花束" [ref=e72]
+            - generic [ref=e73]:
+              - heading "粉色玫瑰花束" [level=3] [ref=e74]
+              - paragraph [ref=e75]: 精選 20 朵頂級粉色玫瑰，搭配滿天星與尤加利葉，由專業花藝師手工包紮。柔美的粉色花瓣層層綻放，散發淡雅清香，適合生日、紀念日或任何想要表達心意的場合。每束花皆附贈保鮮指南小卡與精美緞帶包裝，讓美麗延續更久。
+              - strong [ref=e76]: NT$ 1,680
+              - button "加入購物車" [ref=e77]
+          - article [ref=e78] [cursor=pointer]:
+            - img "白色百合花禮盒" [ref=e79]
+            - generic [ref=e80]:
+              - heading "白色百合花禮盒" [level=3] [ref=e81]
+              - paragraph [ref=e82]: 嚴選 6 枝純白香水百合，花朵碩大飽滿，綻放時散發優雅迷人的清甜香氣。搭配翠綠葉材，置於典雅燙金禮盒中，無需額外包裝即可直接送禮。適合開幕誌慶、喬遷祝賀、長輩生日等正式場合，傳遞最體面的祝福心意。
+              - strong [ref=e83]: NT$ 1,280
+              - button "加入購物車" [ref=e84]
+          - article [ref=e85] [cursor=pointer]:
+            - img "繽紛向日葵花束" [ref=e86]
+            - generic [ref=e87]:
+              - heading "繽紛向日葵花束" [level=3] [ref=e88]
+              - paragraph [ref=e89]: 陽光般燦爛的向日葵 10 朵，搭配橙色雛菊、黃金球與新鮮綠葉，組成充滿活力的繽紛花束。向日葵象徵樂觀與希望，適合畢業祝賀、探病慰問或為朋友加油打氣。花束以牛皮紙與麻繩包裝，呈現自然清新的田園風格。
+              - strong [ref=e90]: NT$ 980
+              - button "加入購物車" [ref=e91]
+          - article [ref=e92] [cursor=pointer]:
+            - img "紫色鬱金香盆栽" [ref=e93]
+            - generic [ref=e94]:
+              - heading "紫色鬱金香盆栽" [level=3] [ref=e95]
+              - paragraph [ref=e96]: 荷蘭進口紫色鬱金香球根盆栽，含手工陶瓷花盆，整體高度約 25-30cm。鬱金香花期約 2-3 週，花朵會隨光線開合，姿態優雅迷人。放置於明亮通風處，每 2-3 天澆水一次即可。適合擺放在書桌、窗台或玄關，為空間增添一抹春日浪漫。
+              - strong [ref=e97]: NT$ 750
+              - button "加入購物車" [ref=e98]
+          - article [ref=e99] [cursor=pointer]:
+            - img "乾燥花藝術花圈" [ref=e100]
+            - generic [ref=e101]:
+              - heading "乾燥花藝術花圈" [level=3] [ref=e102]
+              - paragraph [ref=e103]: 由花藝師手工製作的乾燥花圈，直徑約 30cm，嚴選棉花、兔尾草、星辰花、尤加利葉等天然花材，以大地色系與柔粉色調交織而成。無需澆水照顧，可保存 6 個月以上，是居家門飾、牆面裝飾或拍照道具的絕佳選擇。附贈麻繩掛環，收到即可懸掛。
+              - strong [ref=e104]: NT$ 1,450
+              - button "加入購物車" [ref=e105]
+          - article [ref=e106] [cursor=pointer]:
+            - img "迷你多肉組合盆" [ref=e107]
+            - generic [ref=e108]:
+              - heading "迷你多肉組合盆" [level=3] [ref=e109]
+              - paragraph [ref=e110]: 嚴選 5 種不同品種的迷你多肉植物（含石蓮花、熊童子、虹之玉等），搭配手工水泥圓盆與鋪面小石，整體直徑約 15cm。多肉植物耐旱好照顧，約 7-10 天澆水一次即可，是辦公桌、書架上的療癒小物。適合送給喜歡綠植但忙碌的朋友。
+              - strong [ref=e111]: NT$ 580
+              - button "加入購物車" [ref=e112]
+          - article [ref=e113] [cursor=pointer]:
+            - img "經典紅玫瑰花束" [ref=e114]
+            - generic [ref=e115]:
+              - heading "經典紅玫瑰花束" [level=3] [ref=e116]
+              - paragraph [ref=e117]: 頂級厄瓜多進口紅玫瑰 99 朵，花朵碩大、色澤濃郁飽滿，象徵「長長久久」的永恆愛情。搭配滿天星與進口葉材，以豪華紅色緞帶與高級霧面包裝紙層層包紮，花束直徑超過 50cm，氣勢磅礴。最適合求婚、情人節或重要紀念日，給摯愛最隆重的浪漫告白。
+              - strong [ref=e118]: NT$ 3,980
+              - button "加入購物車" [ref=e119]
+          - article [ref=e120] [cursor=pointer]:
+            - img "季節鮮花訂閱（月配）" [ref=e121]
+            - generic [ref=e122]:
+              - heading "季節鮮花訂閱（月配）" [level=3] [ref=e123]
+              - paragraph [ref=e124]: 每月由駐店花藝師依當季花材精心搭配一束鮮花，直送到府。春天有鬱金香與牡丹，夏天有繡球與向日葵，秋冬則有菊花與聖誕紅等應景花材。每次收花都是驚喜，讓家中四季皆有鮮花相伴。訂閱期間享免運優惠，每月中旬配送，亦可指定暫停月份。
+              - strong [ref=e125]: NT$ 890
+              - button "加入購物車" [ref=e126]
+  - contentinfo [ref=e127]:
+    - generic [ref=e128]:
+      - generic [ref=e129]: © 2026 花漾生活 Flower Life
+      - generic [ref=e130]: Premium floral gift shop
+  - generic [ref=e133]: 已加入購物車

@@ -1,0 +1,126 @@
+<div id="app" class="floral-page floral-cart-page">
+  <section class="floral-page-head">
+    <p class="floral-eyebrow">Gift Checkout</p>
+    <h1>確認購物車</h1>
+    <p class="floral-lead">
+      在送出訂單前，確認花禮數量、包裝與運費。付款流程維持既有綠界金流串接。
+    </p>
+  </section>
+
+  <div v-if="loading" class="floral-loading">
+    <div class="floral-spinner"></div>
+  </div>
+
+  <section v-else-if="items.length === 0" class="floral-empty floral-panel">
+    <aside class="floral-mascot-card floral-empty__mascot">
+      <img src="/images/mascot-guide.png" alt="花漾生活花禮導覽小助手">
+      <p>
+        <strong>先挑一份心意吧</strong>
+        <span>購物車目前是空的，可以從場合與花色開始瀏覽。</span>
+      </p>
+    </aside>
+    <a href="/" class="floral-btn floral-btn--primary">回商品列表</a>
+  </section>
+
+  <template v-else>
+    <div
+      v-if="total < 500"
+      class="floral-notice floral-notice--warm"
+    >
+      再選購 NT$ {{ (500 - total).toLocaleString() }} 即可享有免運。
+    </div>
+    <div v-else class="floral-notice floral-notice--success">
+      已符合免運條件，花禮會以精緻包裝出貨。
+    </div>
+
+    <section class="floral-two-column">
+      <div class="floral-panel floral-cart-list">
+        <article
+          v-for="item in items"
+          :key="item.id"
+          class="floral-cart-item"
+          :class="{ 'is-updated': item._updated }"
+        >
+          <img
+            :src="item.product.image_url || 'https://images.unsplash.com/photo-1518709779341-56cf4535e94b?w=220&auto=format&fit=crop'"
+            :alt="item.product.name"
+          >
+
+          <div class="floral-cart-item__info">
+            <h3>{{ item.product.name }}</h3>
+            <p>精品花禮 / 可代寫祝福卡</p>
+          </div>
+
+          <div class="floral-qty" aria-label="數量控制">
+            <button
+              @click="updateQuantity(item.id, item.quantity - 1)"
+              :disabled="item.quantity <= 1"
+              aria-label="減少數量"
+            >-</button>
+            <span>{{ item.quantity }}</span>
+            <button
+              @click="updateQuantity(item.id, item.quantity + 1)"
+              :disabled="item.quantity >= item.product.stock"
+              aria-label="增加數量"
+            >+</button>
+          </div>
+
+          <strong class="floral-cart-item__price">
+            NT$ {{ (item.product.price * item.quantity).toLocaleString() }}
+          </strong>
+
+          <button
+            @click="confirmDelete(item.id)"
+            class="floral-remove"
+            aria-label="刪除商品"
+          >
+            刪除
+          </button>
+        </article>
+      </div>
+
+      <aside class="floral-panel floral-summary">
+        <h2>訂單摘要</h2>
+        <div class="floral-summary-row">
+          <span>商品小計</span>
+          <strong>NT$ {{ total.toLocaleString() }}</strong>
+        </div>
+        <div class="floral-summary-row">
+          <span>運費</span>
+          <strong>{{ total >= 500 ? '免運' : 'NT$ 150' }}</strong>
+        </div>
+        <div class="floral-summary-row">
+          <span>禮品包裝</span>
+          <strong>已包含</strong>
+        </div>
+        <div class="floral-summary-total">
+          <span>總計</span>
+          <strong>NT$ {{ (total + (total >= 500 ? 0 : 150)).toLocaleString() }}</strong>
+        </div>
+        <button @click="goCheckout" class="floral-btn floral-btn--primary floral-btn--full">
+          前往結帳
+        </button>
+
+        <aside class="floral-mascot-card floral-summary__mascot">
+          <img src="/images/mascot-guide.png" alt="花漾生活花禮導覽小助手">
+          <p>
+            <strong>結帳前小提醒</strong>
+            <span>付款按鈕保持主要位置，小助手只協助提示運費與下一步。</span>
+          </p>
+        </aside>
+      </aside>
+    </section>
+  </template>
+
+  <div v-if="confirmVisible" class="floral-modal">
+    <div class="floral-modal__backdrop" @click="confirmVisible = false"></div>
+    <div class="floral-modal__panel">
+      <h3>移除這項花禮？</h3>
+      <p>確認後會將此商品從購物車中移除。</p>
+      <div class="floral-actions floral-actions--center">
+        <button @click="confirmVisible = false" class="floral-btn floral-btn--secondary">取消</button>
+        <button @click="handleDelete" class="floral-btn floral-btn--danger">移除</button>
+      </div>
+    </div>
+  </div>
+</div>

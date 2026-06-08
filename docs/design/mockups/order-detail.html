@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>花漾生活 - 訂單詳情設計稿</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;800&family=Noto+Serif+TC:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./mockup.css">
+</head>
+<body>
+  <main class="page">
+    <div class="shell">
+      <nav class="nav">
+        <div class="brand"><span class="brand-mark">花</span>花漾生活</div>
+        <div class="nav-links"><span>花禮選品</span><span>購物車</span><span>我的訂單</span></div>
+      </nav>
+
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">Order Detail</p>
+          <h1>訂單詳情</h1>
+          <p class="lead">讓訂單狀態、收件資訊、商品明細與可執行動作一眼可讀。</p>
+        </div>
+      </div>
+
+      <section class="layout-2">
+        <div class="grid">
+          <div class="status-panel">
+            <div class="section-head" style="margin:0 0 12px">
+              <div>
+                <p class="muted">訂單編號</p>
+                <h2>FL202606070028</h2>
+              </div>
+              <span class="badge badge-pending">待付款</span>
+            </div>
+            <p class="muted">建立時間：2026/06/07 10:42</p>
+          </div>
+
+          <div class="status-grid">
+            <section class="panel">
+              <h2>收件資訊</h2>
+              <div class="data-row"><span>姓名</span><strong>林小姐</strong></div>
+              <div class="data-row"><span>Email</span><strong>lin@example.com</strong></div>
+              <div class="data-row"><span>地址</span><strong>台北市大安區花禮路 12 號</strong></div>
+            </section>
+            <section class="panel">
+              <h2>付款狀態說明</h2>
+              <p class="muted" style="margin-top:12px;line-height:1.8">待付款訂單保留付款與取消入口；已付款訂單顯示瀏覽商品與取消規則；失敗或取消訂單可回到商品列表重新下單。</p>
+              <aside class="mascot-note inline-helper" aria-label="花禮導覽小助手">
+                <img src="../assets/mascot-guide.png" alt="花漾生活 Q 版花禮導覽小助手">
+                <p><strong>狀態小提醒</strong><span>小助手只補充狀態提示，不覆蓋訂單編號與付款按鈕。</span></p>
+              </aside>
+            </section>
+          </div>
+
+          <section class="panel">
+            <h2>商品明細</h2>
+            <table class="table" aria-label="訂單商品明細">
+              <thead>
+                <tr>
+                  <th>商品</th>
+                  <th>單價</th>
+                  <th>數量</th>
+                  <th>小計</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="商品">晨霧玫瑰花束</td>
+                  <td data-label="單價">NT$ 1,280</td>
+                  <td data-label="數量">1</td>
+                  <td data-label="小計">NT$ 1,280</td>
+                </tr>
+                <tr>
+                  <td data-label="商品">柔光永生花盒</td>
+                  <td data-label="單價">NT$ 2,080</td>
+                  <td data-label="數量">1</td>
+                  <td data-label="小計">NT$ 2,080</td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="total"><span>訂單總額</span><span>NT$ 3,360</span></div>
+          </section>
+        </div>
+
+        <aside class="summary">
+          <h2>可執行動作</h2>
+          <p class="muted" style="margin:10px 0 16px;line-height:1.8">此區依既有 order status logic 顯示，不改綠界付款邏輯。</p>
+          <div class="actions" style="display:grid">
+            <a class="btn btn-secondary" href="#">瀏覽商品</a>
+            <a class="btn btn-success" href="#">前往付款</a>
+            <a class="btn btn-danger" href="#">取消訂單</a>
+          </div>
+          <div class="summary-line"><span>paid</span><strong>瀏覽 / 取消</strong></div>
+          <div class="summary-line"><span>pending</span><strong>瀏覽 / 付款 / 取消</strong></div>
+          <div class="summary-line"><span>failed</span><strong>瀏覽 / 取消 / 重新下單</strong></div>
+          <div class="summary-line"><span>canceled</span><strong>瀏覽 / 重新下單</strong></div>
+        </aside>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,155 @@
+<div
+  id="app"
+  class="floral-page floral-order-page"
+  data-order-id="<%= orderId %>"
+  data-payment-result="<%= paymentResult %>"
+>
+  <section class="floral-page-head">
+    <p class="floral-eyebrow">Order Detail</p>
+    <h1>訂單詳情</h1>
+    <p class="floral-lead">
+      讓訂單狀態、收件資訊、商品明細與可執行動作一眼可讀。
+    </p>
+  </section>
+
+  <div v-if="loading" class="floral-loading">
+    <div class="floral-spinner"></div>
+  </div>
+
+  <template v-else-if="order">
+    <div
+      v-if="paymentResult && paymentMessages[paymentResult]"
+      class="floral-notice"
+      :class="paymentMessages[paymentResult].cls"
+    >
+      {{ paymentMessages[paymentResult].text }}
+    </div>
+
+    <section class="floral-two-column">
+      <div class="floral-order-stack">
+        <div class="floral-panel floral-order-header">
+          <div>
+            <p class="floral-label">訂單編號</p>
+            <h2>{{ order.order_no }}</h2>
+            <p class="floral-muted">
+              建立時間：{{ new Date(order.created_at).toLocaleDateString('zh-TW') }}
+            </p>
+          </div>
+          <span
+            class="floral-status-badge"
+            :class="'floral-status-badge--' + normalizedStatus(order.status)"
+          >
+            {{ statusMap[normalizedStatus(order.status)]?.label || order.status }}
+          </span>
+        </div>
+
+        <div class="floral-info-grid">
+          <section class="floral-panel">
+            <h2>收件資訊</h2>
+            <div class="floral-data-row">
+              <span>姓名</span>
+              <strong>{{ order.recipient_name }}</strong>
+            </div>
+            <div class="floral-data-row">
+              <span>Email</span>
+              <strong>{{ order.recipient_email }}</strong>
+            </div>
+            <div class="floral-data-row">
+              <span>地址</span>
+              <strong>{{ order.recipient_address }}</strong>
+            </div>
+          </section>
+
+          <section class="floral-panel">
+            <h2>付款狀態說明</h2>
+            <p class="floral-muted floral-status-copy">
+              <template v-if="isPending(order.status)">
+                此訂單尚未付款，可繼續前往付款或取消訂單。
+              </template>
+              <template v-else-if="normalizedStatus(order.status) === 'paid'">
+                此訂單已完成付款，我們會依照訂單資訊安排後續出貨。
+              </template>
+              <template v-else-if="isFailed(order.status)">
+                付款未完成，可查看訂單後重新挑選花禮。
+              </template>
+              <template v-else-if="isCanceled(order.status)">
+                此訂單已取消，可回到商品列表重新下單。
+              </template>
+              <template v-else>
+                請依照目前訂單狀態選擇下一步操作。
+              </template>
+            </p>
+            <aside class="floral-mascot-card floral-status-helper">
+              <img src="/images/mascot-guide.png" alt="花漾生活花禮導覽小助手">
+              <p>
+                <strong>狀態小提醒</strong>
+                <span>小助手只補充狀態提示，不覆蓋訂單編號與付款按鈕。</span>
+              </p>
+            </aside>
+          </section>
+        </div>
+
+        <section class="floral-panel">
+          <h2>商品明細</h2>
+          <table class="floral-order-table">
+            <thead>
+              <tr>
+                <th>商品</th>
+                <th>單價</th>
+                <th>數量</th>
+                <th>小計</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="item in order.items" :key="item.id">
+                <td data-label="商品">{{ item.product_name }}</td>
+                <td data-label="單價">NT$ {{ item.product_price.toLocaleString() }}</td>
+                <td data-label="數量">{{ item.quantity }}</td>
+                <td data-label="小計">NT$ {{ (item.product_price * item.quantity).toLocaleString() }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="floral-summary-total floral-order-total">
+            <span>訂單總額</span>
+            <strong>NT$ {{ order.total_amount.toLocaleString() }}</strong>
+          </div>
+        </section>
+      </div>
+
+      <aside class="floral-panel floral-action-panel">
+        <h2>可執行動作</h2>
+        <p class="floral-muted">
+          此區依目前訂單狀態顯示，不更動既有訂單與付款流程。
+        </p>
+        <div class="floral-actions floral-actions--stack">
+          <a href="/" class="floral-btn floral-btn--secondary">瀏覽商品</a>
+
+          <a
+            v-if="isPending(order.status) && order.merchant_trade_no"
+            :href="'/payment/redirect/' + order.merchant_trade_no"
+            class="floral-btn floral-btn--success"
+          >
+            前往付款
+          </a>
+
+          <button
+            v-if="isCancelable(order.status)"
+            @click="cancelOrder"
+            :disabled="canceling"
+            class="floral-btn floral-btn--danger"
+          >
+            {{ canceling ? '取消中...' : '取消訂單' }}
+          </button>
+
+          <a
+            v-if="isFailed(order.status) || isCanceled(order.status)"
+            href="/"
+            class="floral-btn floral-btn--primary"
+          >
+            重新下單
+          </a>
+        </div>
+      </aside>
+    </section>
+  </template>
+</div>

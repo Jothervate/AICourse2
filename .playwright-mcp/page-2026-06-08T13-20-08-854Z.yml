@@ -1,0 +1,55 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "花 花漾生活" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e5]: 花
+        - generic [ref=e6]: 花漾生活
+      - navigation [ref=e7]:
+        - link "花禮選品" [ref=e8] [cursor=pointer]:
+          - /url: /
+        - link "購物車 1" [ref=e9] [cursor=pointer]:
+          - /url: /cart
+          - text: 購物車
+          - generic [ref=e10]: "1"
+        - link "我的訂單" [ref=e11] [cursor=pointer]:
+          - /url: /orders
+      - generic [ref=e12]:
+        - generic [ref=e13]: Codex 測試員
+        - button "登出" [ref=e14]
+  - main [ref=e15]:
+    - generic [ref=e16]:
+      - heading "結帳" [level=1] [ref=e17]
+      - generic [ref=e18]:
+        - generic [ref=e20]:
+          - heading "收件資訊" [level=2] [ref=e21]
+          - generic [ref=e22]:
+            - generic [ref=e23]:
+              - generic [ref=e24]: 收件人姓名
+              - textbox "請輸入收件人姓名" [ref=e25]
+            - generic [ref=e26]:
+              - generic [ref=e27]: Email
+              - textbox "請輸入 Email" [ref=e28]
+            - generic [ref=e29]:
+              - generic [ref=e30]: 收件地址
+              - textbox "請輸入收件地址" [ref=e31]
+        - generic [ref=e33]:
+          - heading "訂單摘要" [level=2] [ref=e34]
+          - generic [ref=e36]:
+            - generic [ref=e37]: 粉色玫瑰花束 x 1
+            - generic [ref=e38]: NT$ 1,680
+          - generic [ref=e39]:
+            - generic [ref=e40]:
+              - generic [ref=e41]: 商品小計
+              - generic [ref=e42]: NT$ 1,680
+            - generic [ref=e43]:
+              - generic [ref=e44]: 運費
+              - generic [ref=e45]: 免運
+          - generic [ref=e46]:
+            - generic [ref=e47]: 總計
+            - generic [ref=e48]: NT$ 1,680
+          - button "確認送出訂單" [ref=e49]
+  - contentinfo [ref=e50]:
+    - generic [ref=e51]:
+      - generic [ref=e52]: © 2026 花漾生活 Flower Life
+      - generic [ref=e53]: Premium floral gift shop

@@ -1,0 +1,60 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e3]:
+      - link "花 花漾生活" [ref=e4] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e5]: 花
+        - generic [ref=e6]: 花漾生活
+      - navigation [ref=e7]:
+        - link "花禮選品" [ref=e8] [cursor=pointer]:
+          - /url: /
+        - link "購物車" [ref=e9] [cursor=pointer]:
+          - /url: /cart
+        - link "我的訂單" [ref=e10] [cursor=pointer]:
+          - /url: /orders
+      - generic [ref=e11]:
+        - generic [ref=e12]: Codex 測試員
+        - button "登出" [ref=e13]
+  - main [ref=e14]:
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - paragraph [ref=e18]: Payment Result
+        - generic [ref=e19]: 付款成功
+        - heading "你的花禮訂單已完成付款。" [level=1] [ref=e20]
+        - paragraph [ref=e21]: 我們會開始整理花材與包裝，並依照訂單資訊安排後續出貨。此頁僅呈現結果，不改動綠界回傳與付款狀態判斷。
+        - paragraph [ref=e22]: 付款結果已接收並驗證完成 (Payment result received and verified).
+        - generic [ref=e23]:
+          - generic [ref=e24]:
+            - term [ref=e25]: 訂單編號
+            - definition [ref=e26]: ORD-20260608-429DD
+          - generic [ref=e27]:
+            - term [ref=e28]: 付款金額
+            - definition [ref=e29]: NT$ 1,680
+          - generic [ref=e30]:
+            - term [ref=e31]: 付款方式
+            - definition [ref=e32]: Credit
+          - generic [ref=e33]:
+            - term [ref=e34]: 綠界交易編號
+            - definition [ref=e35]: "2606082120298455"
+          - generic [ref=e36]:
+            - term [ref=e37]: 付款狀態
+            - definition [ref=e38]: paid
+          - generic [ref=e39]:
+            - term [ref=e40]: 綠界結果
+            - definition [ref=e41]: 1 / Succeeded
+        - generic [ref=e42]:
+          - strong [ref=e43]: 下一步
+          - generic [ref=e44]: 1. 檢查訂單詳情與收件資訊。
+          - generic [ref=e45]: 2. 回到商品列表繼續挑選花禮。
+        - generic [ref=e46]:
+          - link "查看訂單" [ref=e47] [cursor=pointer]:
+            - /url: /orders/c902f913-4e5f-41e9-bbf0-6167e3d757d3
+          - link "回到商店" [ref=e48] [cursor=pointer]:
+            - /url: /
+      - complementary [ref=e49]:
+        - img "花漾生活花禮導覽小助手" [ref=e50]
+        - paragraph [ref=e51]: 謝謝你的心意，花禮正在準備中。
+  - contentinfo [ref=e52]:
+    - generic [ref=e53]:
+      - generic [ref=e54]: © 2026 花漾生活 Flower Life
+      - generic [ref=e55]: Premium floral gift shop
